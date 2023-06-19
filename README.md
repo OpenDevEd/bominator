@@ -1,15 +1,13 @@
 Reformat Kicad 7 bom/cpl files for jlcpcb (https://jlcpcb.com/).
 
-Follow https://support.jlcpcb.com/article/194-how-to-generate-gerber-and-drill-files-in-kicad-6 to generate Gerber and Drill.
+To get your PCB printed, you need to:
+* Follow https://support.jlcpcb.com/article/194-how-to-generate-gerber-and-drill-files-in-kicad-6 to generate Gerber and Drill.
+* Export bom from Kicad. Suppose this is called project.csv
+* Export cpl using the settings provided here: https://support.jlcpcb.com/article/84-how-to-generate-the-bom-and-centroid-file-from-kicad to generate You don't need to make any changes. Export both top/bottom layers to one file. Suppose this is called project-pos.csv
 
-Export bom from Kicad. Suppose this is called project.csv
+The bom/cpl use different header names. The `bominator.pl` script changes those.
 
-Export cpl using the settings provided here:
-https://support.jlcpcb.com/article/84-how-to-generate-the-bom-and-centroid-file-from-kicad to generate
-You don't need to make any changes. Export both top/bottom layers to one file.
-Suppose this is called project-pos.csv
-
-You can process these files like this:
+You can process the exported files like this:
 ```
 bominator.pl --bom project.csv --cpl project-pos.csv
 ```
