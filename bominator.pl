@@ -70,7 +70,7 @@ my %bom_map = (
     "Comment","Designation",
     "Designator","Designator",
     "Footprint","Footprint",
-    "JLCPCB Part","Supplier and ref"
+    "JLCPCB Part","LCSC"
     );
 
 my %cpl_map = (
